@@ -71,7 +71,7 @@
 
 	@include mq($lg) {
 		&--section,
-		&__wrapper { width: 175px; }
+		&__wrapper { width: 140px; }
 
 		&--default { width: 170px; }
 
@@ -90,7 +90,7 @@
 
 	@include mq($xl) {
 		&--section,
-		&__wrapper { width: 195px; }
+		&__wrapper { width: 150px; }
 	}
 }
 
