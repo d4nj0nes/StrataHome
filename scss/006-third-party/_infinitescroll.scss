@@ -1,0 +1,27 @@
+#infscr-loading,
+.m_pagination {
+	@extend .t_accent;
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: flex!important;
+	align-items: center;
+	justify-content: center;
+
+	height: 60px;
+
+	background: color('grey', 200);
+	opacity: 1!important;
+
+	color: white;
+
+	img { display: none!important; }
+	div { opacity: 1!important; }
+}
+
+#infscr-loading { z-index: 2; }
+
+.has-js .m_pagination { visibility: hidden; }

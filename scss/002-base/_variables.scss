@@ -1,0 +1,99 @@
+//-----------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------
+
+//-------------------------------------------------
+// Colors
+
+// use with color mixin. 400 is default.
+
+// EXAMPLE:
+// background: color('grey', 200);
+// color: color('grey');
+
+$colors: (
+	'grey': (
+		100: #f1eff4,
+		200: #a5a3a8,
+		//300: #999,
+		//400: #666,
+		500: #404041,
+		//600: #232323,
+		700: #221f1f,
+		//800: #212121,
+		900: #191919
+	),
+
+	'orange': (
+		300: #ff6322,
+		400: #ff4f05
+	),
+	'red': (
+		300: #f8192c,
+		400: #e20013
+	),
+	'pink': (
+		300: #ff0697,
+		400: #ea088c
+	),
+	'blue': (
+		300: #3ac7fb,
+		400: #0eb4f2
+	),
+	'yellow': (
+		300: #ffc424,
+		400: #ffb424
+	)
+);
+
+$section-colors: (
+	'orange',
+	'red',
+	'pink',
+	'blue',
+	'yellow'
+);
+
+$section-names: (
+	'big',
+	'strata',
+	'about',
+	'smart',
+	'future'
+);
+
+
+//-------------------------------------------------
+// Fonts
+
+$serif-base: 'Georgia', 'Times New Roman', serif;
+$sans-base: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$arquette: 'ATCArquette-Strata', $sans-base;
+
+$weight-thin: 100;
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-black: 900;
+
+
+//-------------------------------------------------
+// Break points
+
+$sm: 320;
+$sm-roomy: 375;
+$md: 760;
+$lg: 980;
+$xl: 1280;
+$xxl: 1400;
+$xxxl: 1920;
+
+
+//-------------------------------------------------
+// MISC
+
+$transition-time: 0.5s;
+$transition-short: 0.3s;

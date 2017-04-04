@@ -1,0 +1,226 @@
+
+//-----------------------------------------------------------
+// HEADER
+//-----------------------------------------------------------
+
+.h {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1002;
+
+	height: 60px;
+
+	@include mq($lg) {
+		height: 70px;
+	}
+}
+
+.h_logo {
+	transition: all $transition-time;
+
+	&__wrapper { flex: 1 1 auto; }
+
+	&--default { width: 130px; }
+
+	&--section {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		visibility: visible;
+		backface-visibility: hidden;
+		transform: scaleY(0);
+
+		.home-app & { transform: none; }
+	}
+
+	&__logo { width: 100px; }
+
+	&__logo,
+	&__mark { height: 25px; }
+
+	&__mark {
+		margin: 0 20px;
+		width: 16px;
+	}
+
+	[class*="s--"] &--default {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	// section colors
+	@each $name in $section-names {
+		.has-js .s--#{$name} &--#{$name} {
+			opacity: 1;
+			visibility: visible;
+			transform: scaleY(1);
+			transition: opacity $transition-time ease, visibility $transition-time ease, transform $transition-time ease;
+		}
+
+		.has-js .s--#{$name} &--#{$name} &__label {
+			span {
+				transform: translateX(0);
+				transition: transform $transition-time*1.25 $transition-time ease;
+			}
+		}
+	}
+
+	@include mq($lg) {
+		&--section,
+		&__wrapper { width: 175px; }
+
+		&--default { width: 170px; }
+
+		&__wrapper { flex: 0 0 auto; }
+
+		&__logo {
+			width: 122px;
+			height: 30px;
+		}
+
+		&__mark {
+			width: 25px;
+			height: 40px;
+		}
+	}
+
+	@include mq($xl) {
+		&--section,
+		&__wrapper { width: 195px; }
+	}
+}
+
+.h_logo__label {
+	overflow: hidden;
+	padding: 0 0 0 15px;
+	border-left: 2px solid currentColor;
+	line-height: 40px;
+	font-weight: normal;
+
+	span {
+		display: block;
+		transform: translateX(calc(-100% - 15px));
+	}
+
+	@include mq($lg) {
+		@include font-size(15);
+	}
+
+	@include mq($xl) {
+		@include font-size(18);
+	}
+}
+
+.h_search-toggle,
+.h_contact {
+	border-right: 2px solid white;
+}
+
+.h_button {
+	.mz-hover &:hover { background: white; }
+}
+
+.h_search-bar {
+	position: absolute;
+	right: 0;
+	width: 128px;
+	height: 60px;
+	z-index: 1;
+
+	opacity: 0;
+	visibility: hidden;
+
+	transition: width $transition-time, opacity $transition-time/2 $transition-time, visibility 0s $transition-time*2;
+
+	&__close {
+		width: 62px;
+		border-left: 2px solid white;
+		pointer-events: none;
+	}
+
+	&__input {
+		width: calc(100% - 128px);
+		transition: all $transition-time;
+	}
+
+	&.is-active {
+		width: 100%;
+		opacity: 1;
+		visibility: visible;
+
+		transition: width $transition-time, opacity 0s;
+	}
+
+	&.is-active &__input {
+		padding-right: 20px;
+	}
+
+	&.is-active &__close { pointer-events: auto; }
+
+	@include mq($lg) {
+		right: 198px;
+		width: 65px;
+		height: 70px;
+
+		&__input {
+			font-weight: 400;
+			@include font-size(42);
+		}
+
+		&__close {
+			position: absolute;
+			right: 0;
+			height: 70px;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&.is-active {
+			width: calc(100% - 198px);
+
+			.h_search-bar__close {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	@include mq($xl) {
+		right: 242px;
+
+		&.is-active {
+			width: calc(100% - 240px);
+		}
+	}
+}
+
+.h_button {
+	@include mq($xl) {
+		width: 120px;
+	}
+}
+.h_link {
+	@include font-size(15);
+	line-height: 40px;
+
+	@include mq($xl) {
+		@include font-size(18);
+	}
+}
+
+.h_social {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.h_anim {
+	width: 90px;
+	svg * { fill: currentColor; }
+	@include mq($lg) {
+		width: 122px;
+	}
+}

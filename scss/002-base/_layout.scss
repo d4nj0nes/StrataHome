@@ -1,0 +1,280 @@
+.l_pos--relative { position: relative; }
+.l_pos--absolute { position: absolute; }
+
+.l_o--hidden { overflow: hidden; }
+
+// common margin/padding for sections
+.l_m-section {
+	margin: 45px 0;
+
+	&--t { margin-top: 45px; }
+	//&--b { margin-bottom: 45px; }
+	//&--b-neg { margin-bottom: -45px; }
+
+	@include mq($md) {
+		margin: 60px 0;
+
+		&--t { margin-top: 60px; }
+		//&--b { margin-bottom: 60px; }
+		//&--b-neg { margin-bottom: -60px; }
+	}
+
+	@include mq($lg) {
+		margin: 90px 0;
+
+		&--t { margin-top: 90px; }
+		//&--b { margin-bottom: 90px; }
+		//&--b-neg { margin-bottom: -90px; }
+	}
+}
+
+.l_p-section {
+	padding: 45px 0;
+
+	@include mq($md) {
+		padding: 60px 0;
+	}
+
+	@include mq($lg) {
+		padding: 90px 0;
+	}
+}
+
+// can be used on the first item on the page
+// to properly place it below the fixed header
+.l_m-first {
+	margin-top: 60px;
+	@include mq($lg) {
+		margin-top: 70px;
+	}
+}
+
+// adds a nice overlap of content on the hero
+.l_m-overlap {
+	@include mq($md) {
+		margin-top: -60px;
+	}
+}
+
+.l_m--last {
+	&:last-child { margin-bottom: 0; }
+}
+
+.l_m--grid {
+	@include mq($lg) {
+		margin-top: -2px;
+	}
+}
+
+.l_m {
+	&--auto {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&--10 { margin: 10px; }
+	&--15 { margin: 15px; }
+
+	&--15-30 { margin: 15px 0; }
+	&--30-0 { margin: 30px 0; }
+
+	&--0-10 { margin: 0 10px; }
+	//&--0-20 { margin: 0 20px; }
+
+	&-t--0\.5em { margin-top: 0.5em; }
+	&-t--0\.75em { margin-top: 0.75em; }
+	&-t--1em { margin-top: 1em; }
+	//&-t--1\.5em { margin-top: 1.5em; }
+	&-t--2em { margin-top: 2em; }
+
+	&-t--10 { margin-top: 10px; }
+	//&-t--15 { margin-top: 15px; }
+	&-t--20 { margin-top: 20px; }
+	&-t--30 { margin-top: 30px; }
+	&-t--45 { margin-top: 45px; }
+
+	&-r--10 { margin-right: 10px; }
+	&-r--20 { margin-right: 20px; }
+
+	&-b--0\.25em { margin-bottom: 0.25em; }
+	&-b--0\.75em { margin-bottom: 0.75em; }
+	&-b--1em { margin-bottom: 1em; }
+	&-b--1\.5em { margin-bottom: 1.5em; }
+
+	&-b--30 { margin-bottom: 30px; }
+	&-b--45 { margin-bottom: 45px; }
+
+	&-l--auto { margin-left: auto; }
+	&-l--10 { margin-left: 10px; }
+	&-l--20 { margin-left: 20px; }
+
+	@include mq($md) {
+		//&--auto__md {
+			//margin-right: auto;
+			//margin-left: auto;
+		//}
+
+		&--30__md { margin: 30px; }
+
+		//&--45-0__md { margin: 45px 0; }
+
+		&-t--0__md { margin-top: 0; }
+		&-t--30__md { margin-top: 30px; }
+		//&-t--60__md { margin-top: 60px; }
+
+		&-b--0 { margin-bottom: 0; }
+		&-b--0\.75em__md { margin-bottom: 0.75em; }
+		&-b--40__md { margin-bottom: 40px; }
+		&-b--45__md { margin-bottom: 45px; }
+	}
+
+	@include mq($lg) {
+		&-t--45__lg { margin-top: 45px; }
+		//&-t--90__lg { margin-top: 90px; }
+
+		&-b--60__lg { margin-bottom: 60px; }
+		//&-b--90__lg { margin-bottom: 90px; }
+	}
+}
+
+.l_p {
+	&--1em { padding: 1em; }
+	&--30 { padding: 30px; }
+	&--45 { padding: 45px; }
+
+	&--0-20 { padding: 0 20px; }
+
+	//&--1em-0 { padding: 1em 0; }
+	&--20-0 { padding: 20px 0; }
+	&--30-0 { padding: 30px 0; }
+	&--45-0 { padding: 45px 0; }
+	&--60-30 { padding: 60px 30px; }
+
+	//&-t--0\.25em { padding-top: 0.25em; }
+	&-t--0\.4em { padding-top: 0.4em; }
+	&-t--0\.75em { padding-top: 0.75em; }
+	&-t--1em { padding-top: 1em; }
+	//&-t--10 { padding-top: 10px; }
+	&-t--20 { padding-top: 20px; }
+
+	&-b--0\.2em { padding-bottom: 0.2em; }
+	&-b--0\.75em { padding-bottom: 0.75em; }
+	&-b--1em { padding-bottom: 1em; }
+
+	&-b--60 { padding-bottom: 60px; }
+
+	@include mq($md) {
+		//&-t--0__md { padding-top: 0; }
+	}
+
+	@include mq($lg) {
+		&--30__lg { padding: 30px; }
+		//&--45__lg { padding: 45px; }
+		&--60__lg { padding: 60px; }
+
+		&--45-0__lg { padding: 45px 0; }
+
+		//&-t--0__lg { padding-top: 0; }
+
+		//&-b--0__lg { padding-bottom: 0; }
+	}
+}
+
+//----------------------
+// flex properties
+//----------------------
+
+// align
+.l_align--c { align-items: center; }
+.l_align--s { align-items: stretch; }
+.l_align--t { align-items: flex-start; }
+.l_align--b { align-items: flex-end; }
+
+.l_self--s { align-self: stretch; }
+
+// justify content
+.l_justify--c { justify-content: center; }
+.l_justify--space-around { justify-content: space-around; }
+.l_justify--space-between { justify-content: space-between; }
+
+// wrap
+.l_wrap--wrap { flex-wrap: wrap; }
+
+// direction
+.l_direction--column { flex-direction: column; }
+
+
+//----------------------
+// hide/show
+//----------------------
+
+// MOBILE
+.l_block { display: block; }
+.l_inline-block { display: inline-block; }
+.l_flex { display: flex; }
+.l_hide { display: none; }
+//.mz-no-touchevents .l_hide--notouch { display: none; }
+
+// TABLET
+@include mq($md) {
+	.l_hide--md { display: none; }
+	.l_block--md { display: block; }
+	.l_inline--md { display: inline; }
+	.l_inline-block--md { display: inline-block; }
+	.l_flex--md { display: flex; }
+}
+
+// DESKTOP
+@include mq($lg) {
+	.l_hide--lg { display: none; }
+	.l_block--lg { display: block; }
+	.l_inline-block--lg { display: inline-block; }
+	.l_flex--lg { display: flex; }
+}
+
+// VANITY
+@include mq($xl) {
+	.l_hide--xl { display: none; }
+	.l_block--xl { display: block; }
+	.l_inline-block--xl { display: inline-block; }
+	.l_flex--xl { display: flex; }
+}
+
+// sticky footer
+.l_frame {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+}
+
+main { flex: 1 0 auto; }
+
+// containers
+
+.l_container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 30px;
+	padding-left: 30px;
+	width: 100%;
+
+	//&--xs { max-width: 480px; } // 420
+	&--sm { max-width: 780px; } // 720
+	&--md { max-width: 880px; } // 820
+	&--lg { max-width: 1060px; } // 1000
+
+	// if containers are inside other containers we need to neaten them up
+	.l_container {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+// content
+
+.l_content {
+	&--sm { max-width: 600px; }
+}
+
+.has-embed iframe { width: 100%; }

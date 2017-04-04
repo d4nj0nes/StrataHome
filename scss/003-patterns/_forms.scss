@@ -1,0 +1,268 @@
+//---------------------------------------------------------------------
+// GENERIC
+//---------------------------------------------------------------------
+
+input,
+textarea,
+select,
+label {
+	display: block;
+	width: 100%;
+	background: transparent;
+}
+
+// placeholder match input text color
+.f_p-match {
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: inherit;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+	  color: inherit;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+	  color: inherit;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+	  color: inherit;
+	}
+}
+
+textarea {
+	height: 240px;
+
+	@include mq($md) {
+		height: 140px;
+	}
+}
+
+
+//---------------------------------------------------------------------
+// FANCY FIELDSETS
+//---------------------------------------------------------------------
+
+.f_fieldset {
+	margin-top: 2.5em;
+
+	&__input,
+	&__label {
+		@extend .t_body-text;
+	}
+
+	&__input {
+		position: relative;
+		z-index: 2;
+		padding: 0.75em 1em;
+	}
+
+	&__label {
+		@extend .l_pos--absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		padding: 0.75em 0;
+		pointer-events: none;
+		backface-visibility: hidden;
+
+		&:before,
+		> span,
+		&:after {
+			backface-visibility: hidden;
+			pointer-events: none;
+		}
+
+		&:before,
+		> span { transition: all $transition-short; }
+
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: block;
+			content: '';
+		}
+
+		&:before {
+			border-bottom: 2px solid currentColor;
+			transform: translateY(-100%);
+			transition-delay: $transition-short;
+		}
+
+		> span {
+			display: inline-block;
+			transition-delay: 0s;
+		}
+
+		&:after {
+			background: color('grey', 100);
+			transform: scaleY(0);
+			transform-origin: bottom center;
+			transition: transform $transition-short;
+			transition-delay: 0s;
+		}
+
+
+		.f_fieldset--light &:after { background: white; }
+	}
+
+	&__input:focus + &__label,
+	.is-open + &__label,
+	&.is-full &__label {
+		pointer-events: auto;
+
+		&:before {
+			transform: translateY(0);
+			transition-delay: 0s;
+		}
+
+		> span {
+			@include font-size(16);
+			color: color('grey', 200);
+			transform: translate(0, -2.6em);
+			transition-delay: $transition-short;
+		}
+
+		&:after {
+			transform: scaleX(1);
+			transition-delay: $transition-short;
+		}
+	}
+}
+
+
+//---------------------------------------------------------------------
+// CHECKBOXES/RADIO
+//---------------------------------------------------------------------
+
+.f_checkbox-wrapper input[type="checkbox"],
+.f_checkbox-wrapper input[type="radio"] {
+	display: none;
+}
+
+.f_label--checkbox {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 30px 0;
+	padding-left: 45px;
+	min-height: 25px;
+	color: color('grey', 200);
+	font-weight: $weight-medium;
+
+	&:before,
+	&:after {
+		@extend .t_c--primary;
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		content: '';
+		transition: all $transition-time;
+	}
+
+	&:before {
+		margin-top: -12.5px;
+		width: 25px;
+		height: 25px;
+		background: color('grey', 100);
+		border: 2px solid transparent;
+	}
+
+	&:after {
+		margin-top: -6.5px;
+		margin-left: 6px;
+		width: 13px;
+		height: 13px;
+		opacity: 0;
+		background: currentColor;
+	}
+
+	&:hover:before,
+	input:checked + &:before { border-color: currentColor; }
+
+	input:checked + &:after { opacity: 1; }
+}
+
+//---------------------------------------------------------------------
+// LAYOUT
+//---------------------------------------------------------------------
+
+.f_half {
+	@include mq($md) {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
+.f_full {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+@include mq($md) {
+	.f_first { padding-right: 15px; }
+	.f_last { padding-left: 15px; }
+}
+
+@include mq($lg) {
+	.f_first { padding-right: 30px; }
+	.f_last { padding-left: 30px; }
+}
+
+.f_btn_forgot,
+.f_forgot { flex: 1 1 auto; }
+
+.f_forgot {
+	margin: 15px 0 0;
+	@include mq($md) {
+		margin: 0 20px;
+		white-space: nowrap;
+	}
+}
+
+
+//---------------------------------------------------------------------
+// LOADING STYLES
+//---------------------------------------------------------------------
+
+.f_form:before {
+	@extend .u_overlay;
+	z-index: 2;
+	background: rgba(white, 0.75);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity $transition-time;
+}
+
+.f_is-loading {
+	position: relative;
+
+	&:before,
+	.u_loader {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+//---------------------------------------------------------------------
+// ERROR STYLES
+//---------------------------------------------------------------------
+
+.f_error {
+	.f_fieldset__label:after { border: 2px solid currentColor; }
+
+	.f_fieldset__label:before,
+	.f_fieldset__label:after { @extend .t_c--primary; }
+
+	&-msg {
+		position: absolute;
+		top: -1.6em;
+		right: 0;
+		@include font-size(12);
+	}
+}

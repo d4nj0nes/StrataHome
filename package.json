@@ -1,0 +1,21 @@
+{
+	"name": "gotostrata-2016",
+	"version": "1.0.0",
+  "author": "Bright Bright Great (http://brightbrightgreat.com)",
+  "homepage": "http://gotostrata.com/",
+
+	"devDependencies": {
+		"postcss-fixes": "*",
+		"autoprefixer": "*",
+		"cssnano": "*",
+		"grunt": "^0.4.5",
+		"grunt-contrib-jshint": "*",
+		"grunt-contrib-sass": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-notify": "*",
+		"grunt-postcss": "*",
+		"grunt-sass": "*",
+		"grunt-modernizr": "*"
+	}
+}

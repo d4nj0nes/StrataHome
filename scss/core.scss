@@ -1,0 +1,55 @@
+//-----------------------------------------------------------
+// KICKSTART (USED ON EVERY PROJECT)
+//-----------------------------------------------------------
+
+@import "001-kickstart/helpers";              // reset + standard helper classes
+@import "001-kickstart/mixins";               // common mixins
+
+
+//-----------------------------------------------------------
+// PROJECT BASE
+//-----------------------------------------------------------
+
+@import "002-base/fonts";                     // @font-face declarations
+@import "002-base/variables";                 // color, font, breakpoint variables, etc
+@import "002-base/base";                      // base styles for project
+@import "002-base/layout";                    // useful layout styles
+@import "002-base/typography";                // type styles for project
+@import "002-base/utilities";                 // misc reusables - small chunks as opposed to entire sections like modules
+
+
+//-----------------------------------------------------------
+// PATTERNS
+//-----------------------------------------------------------
+
+@import "003-patterns/buttons";               // button styles for project
+@import "003-patterns/forms";                 // form styles
+@import "003-patterns/icons";             		// icon styles
+@import "003-patterns/modules";               // larger modules that are reused throughout the site
+
+
+//-----------------------------------------------------------
+// GLOBAL ELEMENTS (HEADER & FOOTER, ETC)
+//-----------------------------------------------------------
+
+@import "004-globals/header";                 // header styles
+@import "004-globals/footer";                 // footer styles
+@import "004-globals/nav";                    // navigation elements
+@import "004-globals/section-colors";					// section theming
+
+
+//-----------------------------------------------------------
+// PAGES
+//-----------------------------------------------------------
+@import "005-pages/home";                   // about
+
+
+//-----------------------------------------------------------
+// THIRD PARTY STYLES
+//-----------------------------------------------------------
+@import "006-third-party/blobselect";        // blobselect styles
+
+//-----------------------------------------------------------
+// SHAME
+//-----------------------------------------------------------
+@import "007-shame/shame";                    // styles that need to be refactored, or that are hacky because of browser compatibility etc.

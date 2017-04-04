@@ -1,0 +1,15 @@
+//-----------------------------------------------------------
+// BASE
+//-----------------------------------------------------------
+
+body {
+	background: white;
+	color: color('grey', 700);
+	font-family: $arquette;
+	backface-visibility: hidden;
+}
+
+hr {
+	margin: 0;
+	border: 1px solid color('grey', 100);
+}
