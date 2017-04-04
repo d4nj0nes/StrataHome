@@ -23,7 +23,7 @@ http://gotostrata.brightbrightgreat.com/wp-content/uploads/2017/03/A-02-1920x107
 
 ## Login / binding
 - [x] bind login
-- [ ] bind forgotten pwd
+- [x] bind forgotten pwd
 - [ ] bind register
 - [x] redirect on login
 - [x] show login errors
