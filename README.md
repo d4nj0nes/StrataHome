@@ -4,7 +4,7 @@
 - [ ] resize main image so you can see footer
 - [ ] Get font folder from gotostrata
 
-missing files:
+- [x] missing files:
 ```http://localhost/adazzlemediaappweb/pages/public/fonts/ATCArquette-Regular.woff2 
 http://localhost/adazzlemediaappweb/pages/public/fonts/ATCArquette-Medium.woff2 
 http://localhost/adazzlemediaappweb/pages/public/fonts/ATCArquette-MediumItalic.woff2 
@@ -37,8 +37,9 @@ http://gotostrata.brightbrightgreat.com/wp-content/uploads/2017/03/A-02-1920x107
 - [ ] copy in config
 
 ## other bits
-- [ ] Add fonts
+- [x] Add fonts
 - [ ] use logo once logged in
 - [ ] use new font once logged in
 - [ ] use some of the colours once logged in
 - [ ] Email Templates
+- [ ] handle script bundling (cassette?)
