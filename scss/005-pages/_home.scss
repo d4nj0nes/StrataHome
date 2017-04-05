@@ -2,49 +2,46 @@
 // SLIDE 1
 //----------------------
 
-.p_home_slide-1 {
+.p_home_slide-3 {
 
-	&__post:not(:first-child) { margin-top: 30px; }
+	&__cl {
+		margin: 0 auto;
+		max-width: 900px;
+		flex: 1 1 auto;
 
-	&__post:hover &__post-title {
-		border-color: color('pink');
+		.l_container { margin: 0; padding: 0; max-width: 600px; }
 	}
 
-	&__grid {
-		margin: 45px 0 -46px;
-		width: 100%;
-		border-top: 1px solid white;
-	}
-
-	.l_container { position: relative; }
-
-	.u_bg-video { top: -60px; bottom: -60px; }
+	&__i { padding: 60px 30px; }
 
 	@include mq($md) {
-		padding-right: 30px;
-		padding-left: 30px;
 
-		&__l {
-			padding-right: 30px;
-			max-width: 500px;
-			min-width: 380px;
+		.m_grid-post__inner {
+			margin: 0 auto;
+			max-width: 540px;
 		}
 
-		&__r {
-			flex: 1 1 390px;
-			max-width: 390px;
-			min-width: 260px;
-			padding-left: 30px;
+		&__i { padding: 60px 45px; }
+
+		&__cr {
+			align-self: stretch;
+			flex: 0 0 50%;
+			max-width: 50%;
+			background: white;
 		}
-
-		&__grid { border-top: 0; }
-
-		.l_container { position: static; }
-		.u_bg-video { top: 0; bottom: 0; }
 	}
 
 	@include mq($lg) {
-		border: 0;
-		&__post:not(:first-child) { margin-top: 60px; }
+		&__i { padding: 90px 60px; }
+		h1 { @include font-size(72); }
+	}
+
+	@include mq($xl) {
+		&__cr {
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+		}
 	}
 }
+
+.p_home_slide-1__cl { flex: 1 1 auto; }

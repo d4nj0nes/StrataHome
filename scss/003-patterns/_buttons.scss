@@ -85,32 +85,3 @@
 		&--half { flex: 0 0 calc(50% - 20px); }
 	}
 }
-
-.btn-full {
-	.mz-hover &:hover {
-		color: white!important;
-	}
-}
-
-.arrow {
-	flex: 0 0 calc(100% - 20px);
-	margin: 10px 10px 0;
-	padding: 10px 0;
-	page-break-inside: avoid;
-
-	&__icon {
-		flex: 0 0 18px;
-		width: 18px;
-		height: 20px;
-		transition: all $transition-time;
-	}
-
-	.mz-hover &:hover { border-color: currentColor; }
-	.mz-hover &:hover &__icon { transform: translateX(6px); }
-
-	@include mq($md) {
-		flex: 0 0 calc(50% - 25px);
-		&:nth-child(odd) { margin-right: 15px; }
-		&:nth-child(even) { margin-left: 15px; }
-	}
-}

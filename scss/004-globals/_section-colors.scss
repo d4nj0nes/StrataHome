@@ -5,30 +5,10 @@
 // Text color
 
 .t_c--primary,
-.m_accordion-lg__toggle:hover .m_accordion-lg__h3,
 .btn--solid--primary {
 	@each $name in $section-colors {
 		.sc--#{$name} & {
 			@extend .t_c--#{$name}-400;
-		}
-	}
-}
-
-.m_accordion-lg__section-c.is-active .m_accordion-lg__toggle {
-	@each $name in $section-colors {
-		.sc--#{$name} & {
-			background: color($name);
-		}
-	}
-}
-
-.m_tc .m_accordion-lg__section.is-active .m_accordion-lg__toggle,
-.m_tc .m_accordion-lg__text {
-	@include mq($lg, 'max', 'width') {
-		@each $name in $section-colors {
-			.sc--#{$name} & {
-				background: color($name);
-			}
 		}
 	}
 }
@@ -62,7 +42,6 @@
 }
 
 // backgrounds
-.m_grid-hover--primary:after,
 .btn--hollow--primary:hover,
 .btn--solid--primary:hover,
 .u_bg--primary {
@@ -73,22 +52,10 @@
 	}
 }
 
-@each $name in $section-colors {
-	.m_grid-hover--#{$name}:after {
-		@extend .u_bg--#{$name}-400;
-	}
-}
-
-.m_grid-hover--grey:after {
-	@extend .u_bg--grey-700;
-}
-
 // borders
 .btn--hollow--primary,
-.m_filters-nav a:before ,
 .u_border--primary,
-.btn--solid--primary:hover,
-.m_accordion-lg__section-c.is-active .m_accordion-lg__toggle {
+.btn--solid--primary:hover {
 	@each $name in $section-colors {
 		.sc--#{$name} & {
 			border-color: color('#{$name}', 400);

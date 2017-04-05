@@ -20,11 +20,6 @@
 	}
 }
 
-.i_bbg {
-	width: 126px;
-	height: 16px;
-}
-
 .i_social {
 	width: 25px;
 	height: 25px;
@@ -63,27 +58,6 @@
 	&.i_social--tumblr { width: 11px; }
 	&.i_social--youtube { height: 13px; }
 }
-
-.i_arrow {
-	width: 20px;
-	height: 18px;
-}
-
-.i_arrow-ne { transform: rotate(-135deg); }
-//.i_arrow-left { transform: rotate(90deg); }
-//.i_arrow-right { transform: rotate(-90deg); }
-
-/*.i_xs {
-	width: 12px;
-	height: 12px;
-	@include font-size();
-}*/
-
-/*.i_sm {
-	width: 16px;
-	height: 16px;
-	@include font-size(16);
-}*/
 
 .i_md {
 	width: 18px;
