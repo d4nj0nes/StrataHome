@@ -1,0 +1,64 @@
+//-----------------------------------------------------------
+// SECTION Colors
+//-----------------------------------------------------------
+
+// Text color
+
+.t_c--primary,
+.btn--solid--primary {
+	@each $name in $section-colors {
+		.sc--#{$name} & {
+			@extend .t_c--#{$name}-400;
+		}
+	}
+}
+
+// hovers
+.t_hover--primary {
+	@each $name in $section-colors {
+		.sc--#{$name} & {
+			@extend .t_hover--#{$name}-400;
+		}
+	}
+}
+
+.u_hover--primary {
+	@each $name in $section-colors {
+		.mz-hover .sc--#{$name} &:hover {
+			@extend .u_bg--#{$name}-400;
+		}
+	}
+}
+
+// colored portions of .t_body-text
+.t_body-text--primary {
+	@each $name in $section-colors {
+		.sc--#{$name} & {
+			a:not(.btn),
+			blockquote,
+			li:before { @extend .t_c--#{$name}-400; }
+		}
+	}
+}
+
+// backgrounds
+.btn--hollow--primary:hover,
+.btn--solid--primary:hover,
+.u_bg--primary {
+	@each $name in $section-colors {
+		.sc--#{$name} & {
+			@extend .u_bg--#{$name}-400;
+		}
+	}
+}
+
+// borders
+.btn--hollow--primary,
+.u_border--primary,
+.btn--solid--primary:hover {
+	@each $name in $section-colors {
+		.sc--#{$name} & {
+			border-color: color('#{$name}', 400);
+		}
+	}
+}

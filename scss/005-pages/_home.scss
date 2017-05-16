@@ -1,0 +1,47 @@
+//----------------------
+// SLIDE 1
+//----------------------
+
+.p_home_slide-3 {
+
+	&__cl {
+		margin: 0 auto;
+		max-width: 900px;
+		flex: 1 1 auto;
+
+		.l_container { margin: 0; padding: 0; max-width: 600px; }
+	}
+
+	&__i { padding: 60px 30px; }
+
+	@include mq($md) {
+
+		.m_grid-post__inner {
+			margin: 0 auto;
+			max-width: 540px;
+		}
+
+		&__i { padding: 60px 45px; }
+
+		&__cr {
+			align-self: stretch;
+			flex: 0 0 50%;
+			max-width: 50%;
+			background: white;
+		}
+	}
+
+	@include mq($lg) {
+		&__i { padding: 90px 60px; }
+		h1 { @include font-size(72); }
+	}
+
+	@include mq($xl) {
+		&__cr {
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+		}
+	}
+}
+
+.p_home_slide-1__cl { flex: 1 1 auto; }

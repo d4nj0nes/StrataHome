@@ -1,0 +1,152 @@
+.n_mobile {
+	position: fixed;
+	z-index: 1001;
+	overflow: auto;
+
+	opacity: 0;
+	visibility: hidden;
+
+	@include font-size(24);
+	line-height: 1.6;
+
+	transition: all $transition-time;
+
+	&__menu li { padding: 5px 0 0; }
+
+	&__menu > li {
+		margin-bottom: 15px;
+		border-top: 2px solid currentColor;
+		transition: border-color $transition-time;
+	}
+
+	.sub-menu {
+		display: none;
+		color: color('grey', 200);
+	}
+
+	&__toggle {
+		position: absolute;
+		top: 18px;
+		right: 20px;
+	}
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	// each color
+	@each $name in $section-colors {
+		.section-#{$name} {
+			&.is-active > a { color: color('#{$name}'); }
+			&.is-active { border-color: color('#{$name}'); }
+		}
+	}
+}
+
+.n_desktop {
+	&,
+	&__menu { flex: 1 1 auto; }
+
+	&,
+	&__menu > li {
+		margin: 0 8px;
+	}
+
+	&__menu > li {
+		@extend .l_flex;
+		@extend .l_align--c;
+		@extend .l_pos--relative;
+	}
+
+	.sub-menu {
+		position: absolute;
+		top: 100%;
+		left: -20px;
+
+		padding: 20px 20px;
+		width: 24vw;
+		max-width: 300px;
+
+		background: color('grey', 100);
+
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-10%);
+		transition: all $transition-time;
+
+		a {
+			@extend .l_block;
+			padding: 10px 0 0;
+			border-top: 2px solid currentColor;
+		}
+
+		li:not(:first-child) a { margin-top: 10px; }
+	}
+
+	.menu-item-has-children:hover .sub-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	// each color
+	@each $name in $section-colors {
+		.section-#{$name} {
+			a:hover,
+			&:hover > a,
+			.current-menu-item > a,
+			&.current-menu-item > a,
+			&.current-menu-ancestor > a {
+				color: color('#{$name}');
+			}
+
+			a:hover,
+			&.current-menu-ancestor,
+			&.current-menu-item,
+			.current-menu-item > a {
+				border-color: color('#{$name}');
+			}
+
+		}
+	}
+
+	@include mq($xl) {
+		&,
+		&__menu > li {
+			margin: 0 8px;
+		}
+	}
+}
+
+.n_footer__menu {
+	margin: 90px 0 25px;
+	line-height: 1.6;
+
+	.menu-item-has-children > a,
+	.top li > a {
+		display: block;
+		padding: 0.75em 0;
+		border-top: 2px solid currentColor;
+		@include font-size(18);
+	}
+
+	.menu-item:not(.top) .sub-menu { color: color('grey', 500); }
+
+	> li {
+		flex: 0 0 calc(20% - 20px);
+		width: calc(20% - 20px);
+		margin: 1em 10px;
+	}
+
+	.i_login { transition: color $transition-time; }
+
+	// each color
+	@each $name in $section-colors {
+		.section-#{$name} {
+			a:hover {
+				&, .i_login { color: color('#{$name}'); }
+			}
+		}
+	}
+}

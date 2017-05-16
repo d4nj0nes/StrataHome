@@ -1,0 +1,38 @@
+.f_meta {
+	border-top: 2px solid white;
+	@include font-size(13);
+
+	@include mq($lg) {
+		border-top: 0;
+		@include font-size(16);
+	}
+}
+
+.f_copyright {
+	@include mq($lg) {
+		line-height: 32px;
+	}
+}
+
+.f_cta {
+	height: 200px;
+	border-bottom: 0;
+}
+
+.f_logo {
+	width: 130px;
+	height: 32px;
+}
+
+.f_comcast {
+
+	@include mq($lg) {
+		width: 120px;
+		height: 45px;
+	}
+}
+
+.f_social {
+	margin-left: -10px;
+	margin-right: -10px;
+}
